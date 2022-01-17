@@ -76,21 +76,25 @@ int main(int argc, char *argv[])
     double heightCyl = atof(argv[5]);
 
     // Local variable
-    double area;
+    //double area;
+    double sphereVolume;
+    double cubeVolume;
+    double tetrahedronVolume;
+    double cylinderVolume;
 
     // Call function
-    computeCircle(radius, &area);
-    computeSphere(radiusSphere, &volume);
-    computeCircle(sideCube, &volume);
-    computeCircle(sideTetra, &volume);
-    computeCircle(radiusCyl, heightCyl, &volume);
+    //computeCircle(radius, &area);
+    computeSphere(radiusSphere, &sphereVolume);
+    computeCube(sideCube, &cubeVolume);
+    computeTetrahedron(sideTetra, &tetrahedronVolume);
+    computeCylinder(radiusCyl, heightCyl, &cylinderVolume);
 
     // Print area
     //printf("The area of a circle with radius %.5f equals %.5f.\n", radius, area);
-    printf("SPHERE, radius = %.5f, volume = %.5f.\n", radius, volume);
-    printf("CUBE, side = %.5f, volume = %.5f.\n", side, volume);
-    printf("TETRAHEDRON, side = %.5f, volume = %.5f.\n", side, volume);
-    printf("CYLINDER, radius = %.5f, height = %.5f, volume = %.5f.\n", side, height, volume);
+    printf("SPHERE, radius = %.5f, volume = %.5f.\n", radiusSphere, sphereVolume);
+    printf("CUBE, side = %.5f, volume = %.5f.\n", sideCube, cubeVolume);
+    printf("TETRAHEDRON, side = %.5f, volume = %.5f.\n", sideTetra, tetrahedronVolume);
+    printf("CYLINDER, radius = %.5f, height = %.5f, volume = %.5f.\n", radiusCyl, heightCyl, cylinderVolume);
     // Return success
     return EXIT_SUCCESS;
 }
